@@ -28,7 +28,7 @@ public class kafkaProducerTestApplication {
 	}
 
 	public void run (String[] args) throws Exception{
-        producer.kafkaProducer("nakazawayTest", "テストです");
+        producer.kafkaProducer("kafkaTest", "テストです");
     }
 
 }
