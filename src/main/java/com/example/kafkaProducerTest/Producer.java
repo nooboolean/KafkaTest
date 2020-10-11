@@ -18,9 +18,9 @@ public class Producer {
     @Autowired
     KafkaTemplate<String, String> template;
 
-    public void kafkaProducer(String key, String value){
-        log.info("SendingMessage: #{} => #{}", key, value);
-        template.send(key, value).addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
+    public void kafkaProducer(String topic, String value){
+        log.info("【SendingMessage】 Topic: #{} Value: #{}", topic, value);
+        template.send(topic, value).addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
             @Override
             public void onSuccess(SendResult<String, String> result){
                 log.info("SendResult: #{}", result);
