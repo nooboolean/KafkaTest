@@ -1,5 +1,6 @@
 package com.example.kafkaProducerTest;
 
+import com.example.kafkaProducerTest.domain.TestSerializerDomain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,11 @@ public class kafkaProducerTestApplication {
 	}
 
 	public void run (String[] args) throws Exception{
-        producer.kafkaProducer("kafkaTest", "テストです");
+        TestSerializerDomain testUser = new TestSerializerDomain();
+        testUser.setUserId(1);
+        testUser.setName("仲澤義広");
+        testUser.setNote("テストテスト");
+        producer.kafkaProducer("kafkaTest", testUser);
     }
 
 }

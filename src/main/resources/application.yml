@@ -3,3 +3,6 @@ spring:
     bootstrap-servers: home-nakazaway.com:9092
     template:
       default-topic: test
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
